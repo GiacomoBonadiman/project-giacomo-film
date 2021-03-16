@@ -1,7 +1,8 @@
 CREATE TABLE productor(
        id BIGINT PRIMARY KEY NOT NULL,
-       name VARCHAR(50) UNIQUE NOT NULL,
-       address VARCHAR(50) NOT NULL
+       name VARCHAR(50) NOT NULL,
+       address VARCHAR(50) NOT NULL,
+       film_id BIGINT NOT NULL
 );
 
 CREATE TABLE film(
@@ -9,7 +10,8 @@ CREATE TABLE film(
        title VARCHAR(50) NOT NULL,
        duration SMALLINT NOT NULL,
        soundtrack VARCHAR(250) NOT NULL,
-       director_id BIGINT NOT NULL
+       director_id BIGINT NOT NULL,
+       productor_id BIGINT NOT NULL
 
 );
 
@@ -26,4 +28,12 @@ AS
     FROM director
     INNER JOIN film
     ON director.film_id = film.director_id
+;
+
+CREATE TABLE productor_film
+AS
+SELECT productor.film_id, film.productor_id
+FROM productor
+         INNER JOIN film
+                    ON productor.film_id = film.productor_id
 ;
