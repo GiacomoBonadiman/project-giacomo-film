@@ -14,5 +14,5 @@ import java.util.List;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 public class DirectorDto extends DirectorBasicDto{
-    private List<FilmItemDto> film;
+    private List<FilmItemDto> films;
 }

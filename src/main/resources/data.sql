@@ -53,3 +53,5 @@ INSERT INTO productor VALUES (2, 'Sony', 'USA', 3);
 INSERT INTO productor VALUES (6, 'Eon', 'UK', 5);
 INSERT INTO film_action VALUES (3, 'A', 'azionee');
 INSERT INTO film_action VALUES (5, 'V', 'azioneee');
+
+SELECT * from film_action;
