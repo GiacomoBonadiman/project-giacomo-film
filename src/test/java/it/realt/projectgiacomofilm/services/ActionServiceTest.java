@@ -63,11 +63,11 @@ class ActionServiceTest {
                     () -> assertThat(directorService.getFilmAction(directorId), hasSize(2)));
         } finally {
             directorService.getDirectorById(directorId).ifPresent(d -> d
-                    .getFilm()
+                    .getFilms()
                     .stream()
                     .filter(f -> f.getGenre().equalsIgnoreCase(FilmAction.GENRE))
                     .filter(f -> f.getId() > 0L)
-                    .forEach(f -> f.directorService.deleteFilmAction(directorId, f.getId()))
+                    .forEach(f -> directorService.deleteFilmAction(directorId, f.getId()))
                     );
         }
 

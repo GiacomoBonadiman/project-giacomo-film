@@ -37,6 +37,8 @@ public class Film {
             inverseJoinColumns = @JoinColumn(name="director_id"))
     private Set<Director> directors = new HashSet<>();
 
+
+
     public Film(String title, int duration, Set<Director> directors) {
         this.title = title;
         this.duration = duration;

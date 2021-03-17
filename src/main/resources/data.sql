@@ -19,6 +19,8 @@ CREATE TABLE film(
 CREATE TABLE director(
        id BIGINT PRIMARY KEY NOT NULL,
        name VARCHAR(50) NOT NULL,
+       luogo_nasc VARCHAR(50) NOT NULL,
+       data_nasc VARCHAR(50) NOT NULL,
        film_id BIGINT NOT NULL
 );
 
@@ -45,8 +47,8 @@ CREATE TABLE film_action(
     CONSTRAINT fk_films_action_film foreign key (id) references film(id)
 );
 
-INSERT INTO director VALUES (1, 'Russo brothers', 3);
-INSERT INTO director VALUES (4, 'Sam Mendes', 5);
+INSERT INTO director VALUES (1, 'Russo brothers', '1970-1-30', 'USA', 3);
+INSERT INTO director VALUES (4, 'Sam Mendes','1965-5-30', 'Argentina', 5);
 INSERT INTO film VALUES (3, 'Captain America: Civil War', 147, 'Henry Jackman', 'Action', 1, 2);
 INSERT INTO film VALUES (5, '007: Skyfall', 143, 'Thomas Newman', 'Action', 4, 6);
 INSERT INTO productor VALUES (2, 'Sony', 'USA', 3);

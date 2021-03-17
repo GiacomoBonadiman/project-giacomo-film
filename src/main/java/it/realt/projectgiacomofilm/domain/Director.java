@@ -20,18 +20,21 @@ import java.util.Set;
 public class Director {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
     private String birthPlace;
+
     private LocalDate birthDate;
 
-    @ManyToMany(mappedBy = "directors")
+    //@ManyToMany(mappedBy = "directors")
+    @OneToMany( mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Film> films = new HashSet<>();
 
-    public Director(String name) {
-        this.name = name;
-    }
-
-
+//    public Director addFilm(Film film) {
+//        film.setDirectors(this);
+//        this.films.add(film);
+//        return this;
+//    }
 }

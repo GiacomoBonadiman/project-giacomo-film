@@ -1,8 +1,6 @@
 package it.realt.projectgiacomofilm.bootstrap;
 
 
-import it.realt.projectgiacomofilm.domain.Director;
-import it.realt.projectgiacomofilm.domain.Film;
 import it.realt.projectgiacomofilm.domain.Productor;
 import it.realt.projectgiacomofilm.repositories.DirectorRepository;
 import it.realt.projectgiacomofilm.repositories.FilmRepository;
@@ -30,8 +28,8 @@ public class BootStrapData implements CommandLineRunner {
         productor.setState("California");
         productor.setNation("USA");
         productorRepository.save(productor);
-
-        Director dir = new Director("Russo Brothers");
+        /**
+        Director dir = new Director("Russo Brothers", "USA", "1970-1971");
         Film cap = new Film("Captain America: Civil War", 147);
         dir.getFilms().add(cap);
         cap.getDirectors().add(dir);
@@ -61,7 +59,7 @@ public class BootStrapData implements CommandLineRunner {
         directorRepository.save(sam);
         filmRepository.save(bond);
         productorRepository.save(productor2);
-
+         */
 
 
     }
