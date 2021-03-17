@@ -7,7 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface DirectorRepository extends JpaRepository<Director, Long>, JpaSpecificationExecutor<Director> {
 }
-/**
-public interface DirectorRepository extends CrudRepository<Director, Long> {
-}
-*/
+
+//CrudRepository<Director, Long>

@@ -1,11 +1,21 @@
 package it.realt.projectgiacomofilm.domain;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+@Table(name = "director")
 public class Director {
 
     @Id
@@ -15,9 +25,6 @@ public class Director {
 
     @ManyToMany(mappedBy = "directors")
     private Set<Film> films = new HashSet<>();
-
-    public Director() {
-    }
 
     public Director(String name) {
         this.name = name;
