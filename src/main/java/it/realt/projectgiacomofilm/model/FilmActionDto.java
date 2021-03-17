@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.time.LocalDate;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,9 +13,10 @@ public class FilmActionDto{
 
     private Long id;
     private Long directorId;
-    private LocalDate date;
+    private String title;
+    private int duration;
     private DirectorBasicDto director;
 
     private String codiceAction;
-    private String descrizione,
+    private String descrizione;
 }

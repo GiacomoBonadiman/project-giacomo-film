@@ -9,6 +9,7 @@ CREATE TABLE film(
        title VARCHAR(50) NOT NULL,
        duration SMALLINT NOT NULL,
        soundtrack VARCHAR(250) NOT NULL,
+       film_genre VARCHAR(50) NOT NULL,
        director_id BIGINT NOT NULL,
        productor_id BIGINT NOT NULL
 
@@ -37,9 +38,16 @@ FROM productor
                     ON productor.film_id = film.productor_id
 ;
 
+CREATE TABLE film_action(
+    id BIGINT PRIMARY KEY NOT NULL,
+    cod_action VARCHAR(1),
+    descrizione TEXT,
+    CONSTRAINT fk_films_action_film foreign key (id) references film(id)
+);
+
 INSERT INTO director VALUES (1, 'Russo brothers', 3);
 INSERT INTO director VALUES (4, 'Sam Mendes', 5);
-INSERT INTO film VALUES (3, 'Captain America: Civil War', 147, 'Henry Jackman', 1, 2);
-INSERT INTO film VALUES (5, '007: Skyfall', 143, 'Thomas Newman', 4, 6);
+INSERT INTO film VALUES (3, 'Captain America: Civil War', 147, 'Henry Jackman', 'Action', 1, 2);
+INSERT INTO film VALUES (5, '007: Skyfall', 143, 'Thomas Newman', 'Action', 4, 6);
 INSERT INTO productor VALUES (2, 'Sony', 'USA', 3);
 INSERT INTO productor VALUES (6, 'Eon', 'UK', 5);
